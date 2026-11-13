@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fixedpoint-fir-lab"
+version = "0.1.0"
+description = "A reproducible standard-library laboratory for causal fixed-point FIR arithmetic"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.scripts]
+fixedpoint-fir-lab = "fixedpoint_fir_lab.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

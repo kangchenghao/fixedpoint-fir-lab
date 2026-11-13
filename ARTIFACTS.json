@@ -1,0 +1,111 @@
+{
+  "schema": "public-source-artifact-v1",
+  "description": "Hashes of public source, tests, documentation and checked local results; excludes this manifest and Git/build caches.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+      "bytes": 19
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "a467a4bac8692b1f3ee0aa717eff678899d56a186fc99eb4010d7a9452637013",
+      "bytes": 461
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c876de662f1d7a05dd8f15757b5f72218909efb5e3bfb205eb2d775208400df9",
+      "bytes": 55
+    },
+    {
+      "path": "AI_USAGE.md",
+      "sha256": "69a28a64d6cf77ae5f206f854c0ac13a602c6073e1b84780f857cafaf29c4346",
+      "bytes": 1065
+    },
+    {
+      "path": "CONTRIBUTIONS.md",
+      "sha256": "cb2ed322007447fa073acbbb3ab89d7ef51919fe80a890225da50d23ca997cd1",
+      "bytes": 2734
+    },
+    {
+      "path": "docs/LIMITATIONS.md",
+      "sha256": "bfa1b753390528f7c52c84decee46166aa0ce3870f5c3ee6f3c7d07a62f45ab4",
+      "bytes": 2312
+    },
+    {
+      "path": "docs/\u8bf4\u660e.md",
+      "sha256": "034b2168c715cb603d3ba830824ec3d335caa355cf94bba4f527e924e6007fb9",
+      "bytes": 2609
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "b94006f3f61a3515aa2fb70086f79d2643f1f03e8d82f6c4539b7893bc696d47",
+      "bytes": 1069
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "d9b5297da46592cbc81cf534afbdaac523fb315caf3ee57505c0173199892806",
+      "bytes": 456
+    },
+    {
+      "path": "README.md",
+      "sha256": "df05c1240020cc585acefa97bf47f3e90f96bbb635b56eb6132d6ea8a6f5922f",
+      "bytes": 8089
+    },
+    {
+      "path": "results/demo.json",
+      "sha256": "98f5f35acc56056b34ddae42665c82edf002b4f89692834777df3805edf51cd4",
+      "bytes": 14652
+    },
+    {
+      "path": "results/synthetic-fixtures.json",
+      "sha256": "f9b5b9bfcfb05ee5c3c9ac056833e6be8c13616c76b3d6357f665ba8963b39c7",
+      "bytes": 21948
+    },
+    {
+      "path": "run.py",
+      "sha256": "ecd25fd8035c50f514fcd510f291e97c4588655f79f7387df0a33868c79ed85b",
+      "bytes": 283
+    },
+    {
+      "path": "SOURCES.md",
+      "sha256": "60dd380b45e0b6515262abdf8a005856bcbc2d82ec0f9be8e80b6d773cba490b",
+      "bytes": 1423
+    },
+    {
+      "path": "src/fixedpoint_fir_lab/__init__.py",
+      "sha256": "9954f821783cad49df1a60e3afc5b6832649c409079bd685375c71d5ad013109",
+      "bytes": 526
+    },
+    {
+      "path": "src/fixedpoint_fir_lab/__main__.py",
+      "sha256": "c90982b4ab798b6a5a39e2281c73559e6fe88ef9f462cee9fc430164a109dff7",
+      "bytes": 1320
+    },
+    {
+      "path": "src/fixedpoint_fir_lab/core.py",
+      "sha256": "ca2f784f72131b3036030261512c3d025ef190d1dc760bbb36406a88bbb5c07b",
+      "bytes": 8010
+    },
+    {
+      "path": "src/fixedpoint_fir_lab/experiment.py",
+      "sha256": "4a72922fd69ef0b1a7cab6768db9c6541704456f460620a12ff19761cbb6fc23",
+      "bytes": 9884
+    },
+    {
+      "path": "tests/test_core.py",
+      "sha256": "a717d44873e8484c101f13c923efffe581e01a3ba906787617bd8fcd48f7923e",
+      "bytes": 7199
+    },
+    {
+      "path": "tests/test_experiment.py",
+      "sha256": "909e61029d2c6d815f6650473791e68b62ae0abb8374889805fd36a711673e7e",
+      "bytes": 3286
+    },
+    {
+      "path": "tools/check.py",
+      "sha256": "4c68c7015e1629a2e1c4bbf4ff41296f8d00889b447896efa4740f9431e5cb26",
+      "bytes": 821
+    }
+  ]
+}
