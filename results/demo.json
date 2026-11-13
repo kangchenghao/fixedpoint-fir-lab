@@ -1,0 +1,414 @@
+{
+  "schema": "fixedpoint-fir-experiment-v1",
+  "experiment_complete": true,
+  "parameters": {
+    "fs_hz": 160,
+    "cutoffs_hz": [
+      8,
+      30
+    ],
+    "taps": 31,
+    "window": "symmetric Hamming",
+    "normalization_hz": 19,
+    "input_units_per_uv": 4,
+    "input_integer_range": [
+      -8192,
+      8191
+    ],
+    "input_rounding": "ties-to-even; overflow rejected",
+    "coefficient_fraction_bits": 15,
+    "coefficient_rounding": "ties-to-even",
+    "output_rounding": "arithmetic right shift; floor toward negative infinity",
+    "coefficients_float": [
+      0.0001287979951879603,
+      0.0004978231701696664,
+      0.0034831920365964468,
+      0.0070460616510124585,
+      0.0046322965531373885,
+      -0.006954335270204522,
+      -0.0172907882756495,
+      -0.011466460408679227,
+      0.003061455781158535,
+      -0.008799064934786978,
+      -0.06755420822898449,
+      -0.1311934761439945,
+      -0.11495291580751328,
+      0.018174958344929982,
+      0.1931075700063066,
+      0.27408892959715353,
+      0.1931075700063066,
+      0.018174958344929982,
+      -0.11495291580751328,
+      -0.1311934761439945,
+      -0.06755420822898449,
+      -0.008799064934786978,
+      0.003061455781158535,
+      -0.011466460408679227,
+      -0.0172907882756495,
+      -0.006954335270204522,
+      0.0046322965531373885,
+      0.0070460616510124585,
+      0.0034831920365964468,
+      0.0004978231701696664,
+      0.0001287979951879603
+    ],
+    "coefficients_q15": [
+      4,
+      16,
+      114,
+      231,
+      152,
+      -228,
+      -567,
+      -376,
+      100,
+      -288,
+      -2214,
+      -4299,
+      -3767,
+      596,
+      6328,
+      8981,
+      6328,
+      596,
+      -3767,
+      -4299,
+      -2214,
+      -288,
+      100,
+      -376,
+      -567,
+      -228,
+      152,
+      231,
+      114,
+      16,
+      4
+    ],
+    "output_shifts": [
+      15,
+      13,
+      11
+    ],
+    "seed": 20261112
+  },
+  "accumulator": {
+    "arithmetic": "unbounded Python integers; optional per-partial-sum signed guard",
+    "input_abs_bound": 8192,
+    "sum_abs_coefficients_q15": 47541,
+    "conservative_abs_bound": 389455872,
+    "signed_int32_max": 2147483647,
+    "all_direct_and_paired_partial_sums_safe_in_int32": true
+  },
+  "measurement": {
+    "convolution": "full linear convolution, zero before and after input",
+    "output_length": "N+30",
+    "startup_and_tail_included_in_all_metrics": true,
+    "group_delay_samples": 15,
+    "group_delay_ms": 93.75,
+    "group_delay_is_hardware_compute_latency": false,
+    "threshold_note": "1% is an illustrative numerical comparison, not a clinical or application acceptance criterion",
+    "nrmse_definition": "100 * RMS(actual-reference) / RMS(reference); null when reference RMS is zero",
+    "timing": "no host benchmark, hardware cycles, synthesis, FPGA or power measurements"
+  },
+  "frequency_response": [
+    {
+      "frequency_hz": 0,
+      "float_magnitude": 0.017930742534526662,
+      "q15_magnitude": 0.017852783203125
+    },
+    {
+      "frequency_hz": 2,
+      "float_magnitude": 0.050440697830244206,
+      "q15_magnitude": 0.050392061394904965
+    },
+    {
+      "frequency_hz": 8,
+      "float_magnitude": 0.49716743362000143,
+      "q15_magnitude": 0.49722724343785446
+    },
+    {
+      "frequency_hz": 12,
+      "float_magnitude": 0.8487865953425404,
+      "q15_magnitude": 0.8488213420247682
+    },
+    {
+      "frequency_hz": 19,
+      "float_magnitude": 0.9999999999999999,
+      "q15_magnitude": 0.9999831292650173
+    },
+    {
+      "frequency_hz": 22,
+      "float_magnitude": 0.9882698521311554,
+      "q15_magnitude": 0.9882206319368129
+    },
+    {
+      "frequency_hz": 30,
+      "float_magnitude": 0.49682790993857856,
+      "q15_magnitude": 0.49686526755964794
+    },
+    {
+      "frequency_hz": 55,
+      "float_magnitude": 0.00022497614058590465,
+      "q15_magnitude": 0.00021021726538662948
+    },
+    {
+      "frequency_hz": 80,
+      "float_magnitude": 0.0005308577064320139,
+      "q15_magnitude": 0.000457763671875
+    }
+  ],
+  "fixtures": {
+    "file": "synthetic-fixtures.json",
+    "canonical_sha256": "a5fa0c3edf66a75d1f6d6394e3552392c4ba72fdbdaa8394148b76cf9715a233"
+  },
+  "cases": [
+    {
+      "id": "smooth",
+      "grid_policy": "unrounded floating synthetic samples",
+      "input_samples": 512,
+      "output_samples": 542,
+      "samples_uv_sha256": "8376995b0d89d1792d08a7f40e488248384e1d675c2b49a642ed799e043d7ba4",
+      "samples_int_sha256": "e68c8eae38dea15870d49e4d492a25ed2903df9672a00c5c232bf91e6f87ab53",
+      "quantized_input_min": -190,
+      "quantized_input_max": 190,
+      "clipped_samples": 0,
+      "input_quantization_incremental": {
+        "samples": 542,
+        "reference_rms_uv": 17.625311473007915,
+        "rmse_uv": 0.034653396151915365,
+        "max_abs_error_uv": 0.09461323444012026,
+        "bias_uv": 0.00010204138067989673,
+        "nrmse_percent_of_reference_rms": 0.1966115390640609
+      },
+      "coefficient_quantization_incremental": {
+        "samples": 542,
+        "reference_rms_uv": 17.620578356069377,
+        "rmse_uv": 0.0008073779437564784,
+        "max_abs_error_uv": 0.0018417293079462382,
+        "bias_uv": -4.271941222560187e-05,
+        "nrmse_percent_of_reference_rms": 0.004582017272312623
+      },
+      "input_and_coefficient_total": {
+        "samples": 542,
+        "reference_rms_uv": 17.625311473007915,
+        "rmse_uv": 0.03459303985360902,
+        "max_abs_error_uv": 0.09403243093710811,
+        "bias_uv": 5.9321968454294864e-05,
+        "nrmse_percent_of_reference_rms": 0.1962690980331675
+      },
+      "maximum_observed_abs_accumulator": 4264522,
+      "variants": [
+        {
+          "output_right_shift": 15,
+          "output_units_per_uv": 4.0,
+          "output_lsb_uv": 0.25,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 17.62106778533391,
+            "rmse_uv": 0.14861000718350487,
+            "max_abs_error_uv": 0.24858856201171875,
+            "bias_uv": -0.12786397898769028,
+            "nrmse_percent_of_reference_rms": 0.8433655042584515
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 17.625311473007915,
+            "rmse_uv": 0.15272754329843724,
+            "max_abs_error_uv": 0.30954373540316915,
+            "bias_uv": -0.127804657019236,
+            "nrmse_percent_of_reference_rms": 0.8665239393489875
+          },
+          "illustrative_total_nrmse_under_1_percent": true,
+          "output_integer_sha256": "ca3e8460c0b193d13a1ae4affa54182d34f3583368e33fda061b67940d9c5819",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        },
+        {
+          "output_right_shift": 13,
+          "output_units_per_uv": 16.0,
+          "output_lsb_uv": 0.0625,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 17.62106778533391,
+            "rmse_uv": 0.03614721760841755,
+            "max_abs_error_uv": 0.06246185302734375,
+            "bias_uv": -0.031461764965550046,
+            "nrmse_percent_of_reference_rms": 0.20513636318057316
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 17.625311473007915,
+            "rmse_uv": 0.04908766287446843,
+            "max_abs_error_uv": 0.15475478201132686,
+            "bias_uv": -0.03140244299709575,
+            "nrmse_percent_of_reference_rms": 0.278506640575647
+          },
+          "illustrative_total_nrmse_under_1_percent": true,
+          "output_integer_sha256": "a173dd67846817990a64c40816b8739430fdb30b9459ba3211b9480a62f56d37",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        },
+        {
+          "output_right_shift": 11,
+          "output_units_per_uv": 64.0,
+          "output_lsb_uv": 0.015625,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 17.62106778533391,
+            "rmse_uv": 0.009346171769140954,
+            "max_abs_error_uv": 0.015594482421875,
+            "bias_uv": -0.008197235445254842,
+            "nrmse_percent_of_reference_rms": 0.053039758333600036
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 17.625311473007915,
+            "rmse_uv": 0.035946450962493375,
+            "max_abs_error_uv": 0.10787978201132686,
+            "bias_uv": -0.008137913476800549,
+            "nrmse_percent_of_reference_rms": 0.20394789060915694
+          },
+          "illustrative_total_nrmse_under_1_percent": true,
+          "output_integer_sha256": "c12a781dc77179fca34e39b051c7177df8957fc2c26c26856d715f7b04e150fc",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        }
+      ]
+    },
+    {
+      "id": "small_amplitude",
+      "grid_policy": "quarter-uV grid by design to isolate output quantization",
+      "input_samples": 512,
+      "output_samples": 542,
+      "samples_uv_sha256": "87dedf9f5e0e338d8c25ea2b0440c735af6680efd2b8f85b57998af6a971c8ee",
+      "samples_int_sha256": "f1d1caa90b5157fc5ecc75500f6a29faaff88b4ad6769632bc68d06ec811a58d",
+      "quantized_input_min": -34,
+      "quantized_input_max": 34,
+      "clipped_samples": 0,
+      "input_quantization_incremental": {
+        "samples": 542,
+        "reference_rms_uv": 3.7414557733179725,
+        "rmse_uv": 0.0,
+        "max_abs_error_uv": 0.0,
+        "bias_uv": 0.0,
+        "nrmse_percent_of_reference_rms": 0.0
+      },
+      "coefficient_quantization_incremental": {
+        "samples": 542,
+        "reference_rms_uv": 3.7414557733179725,
+        "rmse_uv": 0.00016401329868211234,
+        "max_abs_error_uv": 0.0003619214874834853,
+        "bias_uv": -6.904147430389768e-06,
+        "nrmse_percent_of_reference_rms": 0.004383675997235247
+      },
+      "input_and_coefficient_total": {
+        "samples": 542,
+        "reference_rms_uv": 3.7414557733179725,
+        "rmse_uv": 0.00016401329868211234,
+        "max_abs_error_uv": 0.0003619214874834853,
+        "bias_uv": -6.904147430389768e-06,
+        "nrmse_percent_of_reference_rms": 0.004383675997235247
+      },
+      "maximum_observed_abs_accumulator": 883729,
+      "variants": [
+        {
+          "output_right_shift": 15,
+          "output_units_per_uv": 4.0,
+          "output_lsb_uv": 0.25,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 3.7415658916695467,
+            "rmse_uv": 0.14342352707816014,
+            "max_abs_error_uv": 0.2498779296875,
+            "bias_uv": -0.12242976677813654,
+            "nrmse_percent_of_reference_rms": 3.8332487314331987
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 3.7414557733179725,
+            "rmse_uv": 0.14343601050782095,
+            "max_abs_error_uv": 0.24987554420745758,
+            "bias_uv": -0.12243667092556691,
+            "nrmse_percent_of_reference_rms": 3.833695203100583
+          },
+          "illustrative_total_nrmse_under_1_percent": false,
+          "output_integer_sha256": "b6ab1ae92cd670129e94e29b1bb1710929d0479b8c88c96d56e168fd9e5b972a",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        },
+        {
+          "output_right_shift": 13,
+          "output_units_per_uv": 16.0,
+          "output_lsb_uv": 0.0625,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 3.7415658916695467,
+            "rmse_uv": 0.03613902133556027,
+            "max_abs_error_uv": 0.0623779296875,
+            "bias_uv": -0.03144729445341329,
+            "nrmse_percent_of_reference_rms": 0.9658795911097654
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 3.7414557733179725,
+            "rmse_uv": 0.03614822403544696,
+            "max_abs_error_uv": 0.062375544207457584,
+            "bias_uv": -0.03145419860084367,
+            "nrmse_percent_of_reference_rms": 0.9661539845863321
+          },
+          "illustrative_total_nrmse_under_1_percent": true,
+          "output_integer_sha256": "453b6762cb322595fba559d08df5c8af95d9ebd44bcbe43f95f8bf3f7ce3cff9",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        },
+        {
+          "output_right_shift": 11,
+          "output_units_per_uv": 64.0,
+          "output_lsb_uv": 0.015625,
+          "output_quantization_incremental": {
+            "samples": 542,
+            "reference_rms_uv": 3.7415658916695467,
+            "rmse_uv": 0.009049589045683022,
+            "max_abs_error_uv": 0.015594482421875,
+            "bias_uv": -0.007836823973708487,
+            "nrmse_percent_of_reference_rms": 0.24186635509564552
+          },
+          "total_vs_float_design": {
+            "samples": 542,
+            "reference_rms_uv": 3.7414557733179725,
+            "rmse_uv": 0.009064361147895977,
+            "max_abs_error_uv": 0.015891003977845042,
+            "bias_uv": -0.007843728121138876,
+            "nrmse_percent_of_reference_rms": 0.24226829600761474
+          },
+          "illustrative_total_nrmse_under_1_percent": true,
+          "output_integer_sha256": "ca937f041d13b3bcc570e0ee02442f0526c4c24d98d6f9148b5679b39af2fa42",
+          "direct_symmetric_bitexact": true,
+          "independent_samples_checked": 542
+        }
+      ]
+    }
+  ],
+  "sources_sha256": {
+    "src/fixedpoint_fir_lab/__init__.py": "9954f821783cad49df1a60e3afc5b6832649c409079bd685375c71d5ad013109",
+    "src/fixedpoint_fir_lab/__main__.py": "c90982b4ab798b6a5a39e2281c73559e6fe88ef9f462cee9fc430164a109dff7",
+    "src/fixedpoint_fir_lab/core.py": "ca2f784f72131b3036030261512c3d025ef190d1dc760bbb36406a88bbb5c07b",
+    "src/fixedpoint_fir_lab/experiment.py": "4a72922fd69ef0b1a7cab6768db9c6541704456f460620a12ff19761cbb6fc23"
+  },
+  "environment": {
+    "python": "3.13.6",
+    "implementation": "CPython",
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64"
+  },
+  "limitations": [
+    "Synthetic signals only; no EEG recording or clinical validation.",
+    "This is a standard FIR numerical experiment, not a novel filtering algorithm.",
+    "Float design is a numerical reference, not an ideal brick-wall filter.",
+    "One filter and two constructed records do not select universal precision.",
+    "Symmetric arithmetic equality is not a measured speedup.",
+    "Binary floating results may differ slightly across Python/libm platforms; record hashes per run."
+  ]
+}
